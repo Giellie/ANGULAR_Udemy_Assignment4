@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UdemyAssignment4';
+
+  evenNumbers: number[] = [];
+  oddNumbers: number[] = [];
+
+  numberIncremented(myNumber: number) {
+    myNumber % 2 ? this.oddNumbers.push(myNumber) : this.evenNumbers.push(myNumber);
+    console.log('NUMBER IN MAIN APP: ', myNumber);
+  }
 }
